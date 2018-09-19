@@ -1,0 +1,136 @@
+/* this is where all of your CSS styles go */
+@keyframes rotate {
+    0% {transform: rotate(0deg);}
+    45% {transform: rotate(180deg);}
+    100% {transform: rotate(360deg)}
+}
+@keyframes t_move {
+    0% {top: 0px; left: 0px;}
+    30% {top: 0px; left:195px;}
+    85% {top: 0px; left: 195px;}
+    90% {top: 0px; left: 2px;}
+    100% {top: 0px; left: 0px;}
+}
+@keyframes o_move {
+    0% {top: 0px; left: -5px; }
+    60% {top: 0px; left: -65px; }
+    100% {top: 0px; left: -5px; }
+}
+@keyframes r2_fade {
+    0% {opacity: 1;}
+    25% {opacity: 0;}
+    35% {opacity: 0;}
+    50% {opacity: 1;}
+    75% {opacity: 0;}
+    90% {opacity: 0;}
+    100% {opacity: 1;}
+
+}
+@keyframes r3_fade {
+
+    0% {opacity: 0; top: 0px; left: -65px;}
+    80% {opacity: 1; top: 0px; left: -65px}
+    /*95% {opacity: 1;top: 0px; left: -65px;}*/
+    /*80% {opacity: 0;top: 0px; left: -50px;}*/
+    95% {opacity: 0;top: 0px; left: -65px;}
+    100% {opacity: 0;top: 0px; left: -65px;}
+}
+
+
+@keyframes p_move {
+    0% {top: -100px; left:-270px; opacity: 0;}
+    /*30% {top: -65px; left: -270px; opacity: 1;}*/
+    /*40% {top:-65px; left: -250px; opacity: 1;}*/
+    /*50% {top: -30px; left:-250px; opacity: 1; }*/
+    /*55% {top:-30px; left: -260px; opacity: 1;}*/
+    /*60% {top:-30px; left: -270px; opacity: 1; }*/
+    70% {top: 0px; left: -270px; opacity: 1;}
+    80% {top: 0px; left: -270px; opacity: 1;}
+
+    100% {top: 140px; left: -270px; opacity: 0;}
+}
+
+@keyframes woah {
+    0% 	{ transform: rotate(0deg); width: 0px; height: 0px; border-radius: 0%; opacity: 1; }
+    20%	{ transform: rotate(0deg); width: 300px; height: 0px; border-radius: 0%; opacity: 1; }
+    40%	{ transform: rotate(0deg); width: 300px; height: 300px; border-radius: 0%; opacity: 1; }
+    60%	{ transform: rotate(-360deg); width: 300px; height: 300px; border-radius: 0%; opacity: 1; }
+    80% 	{ transform: rotate(-360deg); width: 10px; height: 10px; border-radius: 100%; opacity: 1;  }
+    100% 	{ transform: rotate(-360deg); width: 600px; height: 600px; border-radius: 100%; opacity: 0; }
+}
+
+
+html,body {
+    width: 100%;
+    height: 100%;
+}
+
+.container{
+    width: 600px;
+    height: 100px;
+    position: relative;
+    left: 50%;
+    top: 48%;
+    margin-top: -150px;
+    margin-left: -200px;
+}
+
+.mono {
+    font-family: 'Fjalla One';
+    font-size: 6em;
+    float: left;
+    margin-left: 5px;
+}
+.r{
+    /*animation: rotate 7.5s infinite;*/
+    /*animation-delay: 1s;*/
+}
+.t{
+    position: relative;
+    animation: t_move 7.1s infinite linear;
+    animation-delay: .7s;
+}
+.o{
+    position: relative;
+    animation: o_move 7s infinite ease-out;
+    animation-delay: .7s;
+}
+.r2{
+    position: relative;
+    animation: r2_fade 14s infinite ease-in-out;
+    animation-delay: .5s;
+}
+
+.p{
+    left: -270px;
+    top: -100px;
+    opacity: 0;
+    color: red;
+    position: relative;
+    animation-fill-mode: inherit;
+    animation-delay: 10s;
+    animation: p_move 7s infinite ease-out;
+}
+.r3{
+    left: -65px;
+    top: 0px;
+    opacity: 0;
+    position: relative;
+    animation: r3_fade 7s infinite;
+    animation-delay: .6s;
+}
+
+.square_cirlce{
+    width: 0px;
+    height: 0px;
+    border: solid black 0.2px;
+    position: absolute;
+    left: -50%;
+    right: -50%;
+    top:-100%;
+    bottom: -50%;
+    margin: auto;
+    z-index: -1;
+
+    animation: woah 4s infinite cubic-bezier(1,0,0,1);
+}
